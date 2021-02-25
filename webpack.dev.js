@@ -16,8 +16,8 @@ module.exports = merge(common, {
     contentBase: './public', // https://stackoverflow.com/questions/62991326/difference-between-publicpath-and-contentbase-in-webpack
     publicPath: '/static/',
     writeToDisk: true,
+    open: true,
     // hot: true,
-    // open: true,
   },
   // performance: {
   //   hints: false,
