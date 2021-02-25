@@ -3,22 +3,17 @@
   "version": "1.0.0",
   "description": "Webpack enhanced SSG",
   "private": true,
-  "main": "index.js",
   "scripts": {
-    "serve": "webpack -c webpack.dev.js",
+    "serve": "webpack serve -c webpack.dev.js",
     "build": "webpack -c webpack.prod.js",
     "eslint": "eslint source/components source/js",
     "eslint:fix": "eslint source/components source/js --fix",
     "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
     "lint": "run-s stylelint eslint",
     "browserslist": "npx browserslist@latest --update-db",
-    "stats": "webpack --config webpack.prod.js --profile --json > stats.json && webpack-bundle-analyzer stats.json",
-    "foo": "echo FOO!"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run foo"
-    }
+    "stats": "webpack -c webpack.prod.js --profile --json > stats.json && webpack-bundle-analyzer stats.json",
+    "foo": "echo FOO!",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",

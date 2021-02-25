@@ -11,9 +11,11 @@ module.exports = merge(common, {
     filename: '[name].bundle.js',
   },
   devtool: 'source-map',
-  // devServer: {
-  //   contentBase: path.join(__dirname, 'public'),
-  // },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    publicPath: '/static/',
+    // hot: true,
+  },
   // performance: {
   //   hints: false,
   // },
