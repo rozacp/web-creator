@@ -12,9 +12,12 @@ module.exports = merge(common, {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    // contentBase: path.resolve(__dirname, 'public'),
+    contentBase: './public', // https://stackoverflow.com/questions/62991326/difference-between-publicpath-and-contentbase-in-webpack
     publicPath: '/static/',
+    writeToDisk: true,
     // hot: true,
+    // open: true,
   },
   // performance: {
   //   hints: false,
