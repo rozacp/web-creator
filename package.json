@@ -5,14 +5,14 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "serve": "webpack serve",
-    "build": "webpack",
-    "stats": "webpack --config webpack.prod.js --profile --json > stats.json && webpack-bundle-analyzer stats.json",
-    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
+    "serve": "webpack -c webpack.dev.js",
+    "build": "webpack -c webpack.prod.js",
     "eslint": "eslint source/components source/js",
     "eslint:fix": "eslint source/components source/js --fix",
+    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
     "lint": "run-s stylelint eslint",
     "browserslist": "npx browserslist@latest --update-db",
+    "stats": "webpack --config webpack.prod.js --profile --json > stats.json && webpack-bundle-analyzer stats.json",
     "foo": "echo FOO!"
   },
   "husky": {
@@ -34,10 +34,12 @@
   },
   "homepage": "https://github.com/rozacp/web-creator#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "husky": "^5.1.1",
     "npm-run-all": "^4.1.5",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   }
 }
