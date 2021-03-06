@@ -1,4 +1,4 @@
-import debounce from './helpers/debounce'
+import debounce from './helpers/debounce';
 
 console.log('Hi, webpack!');
 

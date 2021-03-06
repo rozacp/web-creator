@@ -6,13 +6,13 @@
   "scripts": {
     "serve": "webpack serve -c webpack.dev.js",
     "build": "webpack -c webpack.prod.js",
-    "eslint": "eslint source/components source/js",
-    "eslint:fix": "eslint source/components source/js --fix",
-    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
-    "lint": "run-s stylelint eslint",
+    "lint:js": "eslint source/components source/js",
+    "lint:js:fix": "eslint source/components source/js --fix",
+    "lint:css": "stylelint \"source/**/*.scss\" ",
+    "lint:css:fix": "stylelint \"source/**/*.scss\" --fix",
+    "lint": "run-s lint:*",
     "browserslist": "npx browserslist@latest --update-db",
     "stats": "webpack -c webpack.prod.js --profile --json > stats.json && webpack-bundle-analyzer stats.json",
-    "foo": "echo FOO!",
     "postinstall": "husky install"
   },
   "repository": {
@@ -30,8 +30,14 @@
   "homepage": "https://github.com/rozacp/web-creator#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "husky": "^5.1.1",
     "npm-run-all": "^4.1.5",
+    "stylelint": "^13.12.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",

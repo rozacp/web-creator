@@ -4,7 +4,7 @@
  */
 
 export default function mediaQuery(mq) {
-  const matches = (key) => {
+  const matches = key => {
     let mediaQueryList = window.matchMedia(key);
     mediaQueryList = mediaQueryList.matches;
     return mediaQueryList;
